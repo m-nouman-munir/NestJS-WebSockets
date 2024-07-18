@@ -17,6 +17,8 @@ import { Server, Socket } from 'socket.io';
 export class MessagesGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
 {
+  //Use Sockt.io from frontend to connect as the url will be same as for other REST ENDPONITs (http://localhost:3000)
+  //If you'll use WebSocket then the url will be change and will include ws://ip:port, I don't really know that formate you have to checke it.
   constructor(private readonly messagesService: MessagesService) {}
 
   @WebSocketServer()
